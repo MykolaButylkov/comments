@@ -1,0 +1,21 @@
+# Node и Firebase Tools (если вдруг добавятся)
+node_modules/
+firebase-debug.log
+.firebaserc
+.firebase/
+.env
+.env.local
+.env.*.local
+
+# Mac / Linux / Windows OS системные
+.DS_Store
+Thumbs.db
+
+# Кэш редакторов
+.vscode/
+.idea/
+*.log
+
+# Сборщики (если добавишь Webpack/Vite)
+dist/
+build/

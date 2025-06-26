@@ -1,0 +1,154 @@
+/* === Базовая палитра сайта ============================================= */
+:root {
+  --brand:       #36a9e1;   /* фирменный голубой из вашего логотипа */
+  --brand-dark:  #238bc5;
+  --accent:      #ffa726;   /* кнопки / акцентные элементы */
+  --bg:          #f9f9f9;   /* фон страницы */
+  --card:        #ffffff;   /* фон карточек */
+  --text:        #222222;
+  --subtle:      #555555;
+  --shadow:      0 4px 10px rgb(0 0 0 / 0.08);
+}
+
+/* === Общий фон и типографика =========================================== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* === Форма отзыва ======================================================= */
+.review-form {
+  background: var(--card);
+  padding: 24px;
+  max-width: 420px;
+  margin: 0 auto 40px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.review-form h2 {
+  margin: 0 0 18px;
+  color: var(--text);
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color .2s;
+}
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+
+.review-form button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .25s;
+}
+.review-form button:hover { background: #ff9100; }
+
+/* === Секция вывода отзывов ============================================= */
+#reviews-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Карточка отдельного отзыва */
+.review {
+  background: var(--card);
+  border-left: 5px solid var(--brand);
+  margin-bottom: 24px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Заголовок: аватар + имя */
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  flex: 0 0 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / .1);
+}
+
+.review h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.review-rating {
+  margin: 2px 0 10px;
+  font-size: 16px;
+  color: var(--subtle);
+}
+
+.review p { margin: 4px 0; }
+
+.review img.review-photo {
+  margin-top: 10px;
+  max-width: 220px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* === Адаптивность ======================================================= */
+@media (max-width: 480px) {
+  .review-form, .review { padding: 18px; }
+  .review-avatar { width: 48px; height: 48px; }
+}
+
+.review-gallery {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.review-photo {
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s;
+}
+
+.review-photo:hover {
+  transform: scale(1.03);
+}
